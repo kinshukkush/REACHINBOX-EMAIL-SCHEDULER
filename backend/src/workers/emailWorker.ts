@@ -1,11 +1,11 @@
 import { Worker, Job } from 'bullmq';
-import { redisConfig } from '../config/redis';
+import { redisConfig, getBullMQRedisConfig } from '../config/redis';
 import { EMAIL_QUEUE_NAME } from '../queues/emailQueue';
 import { createTransporter } from '../services/mailService';
 import prisma from '../config/db';
 import Redis from 'ioredis';
 
-const redis = new Redis(redisConfig);
+const redis = new Redis(redisConfig as any);
 
 export const setupWorker = () => {
     const worker = new Worker(
@@ -78,7 +78,7 @@ export const setupWorker = () => {
             }
         },
         {
-            connection: redisConfig,
+            connection: getBullMQRedisConfig(),
             concurrency: 5, // Configurable concurrency
         }
     );

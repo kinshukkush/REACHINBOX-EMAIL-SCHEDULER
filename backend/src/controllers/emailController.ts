@@ -77,8 +77,10 @@ export const getSentEmails = async (_req: Request, res: Response) => {
 export const getEmailById = async (req: Request, res: Response) => {
     try {
         const { id } = req.params;
+        const emailId = Array.isArray(id) ? id[0] : id;
+        
         const email = await prisma.email.findUnique({
-            where: { id },
+            where: { id: emailId },
             include: { sender: true }
         });
 
