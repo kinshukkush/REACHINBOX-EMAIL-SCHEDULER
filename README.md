@@ -78,7 +78,7 @@ Before running this project, ensure you have:
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/kinshukkush/REACHINBOX-EMAIL-SCHEDULER
 cd "Outbox Ai Assisment"
 ```
 
@@ -102,11 +102,11 @@ REDIS_PORT=6379
 # Server
 PORT=4000
 
-# SMTP (Ethereal Email)
+# SMTP (Ethereal Email - Get yours at https://ethereal.email)
 SMTP_HOST=smtp.ethereal.email
 SMTP_PORT=587
-SMTP_USER=prince.senger76@ethereal.email
-SMTP_PASS=mw3rRHE8vJe1kfdETA
+SMTP_USER=your.email@ethereal.email
+SMTP_PASS=your-ethereal-password
 
 # Rate Limiting
 MAX_EMAILS_PER_HOUR=200
@@ -133,7 +133,7 @@ Create `.env.local` file in `frontend/` directory:
 ```env
 # NextAuth
 NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=tfF0TP5aYEpq9Bu5x1fq+GugFiDgXDodmxsm20XRPbg=
+NEXTAUTH_SECRET=your-secret-key-here
 
 # Google OAuth (Dummy)
 GOOGLE_CLIENT_ID=dummy-client-id
@@ -319,14 +319,14 @@ GET /emails/sent
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `DATABASE_URL` | PostgreSQL connection string | `postgresql://postgres:admin123@localhost:5432/email_scheduler` |
+| `DATABASE_URL` | PostgreSQL connection string | `postgresql://user:password@localhost:5432/email_scheduler` |
 | `REDIS_HOST` | Redis server host | `localhost` |
 | `REDIS_PORT` | Redis server port | `6379` |
 | `PORT` | Express server port | `4000` |
 | `SMTP_HOST` | Ethereal SMTP host | `smtp.ethereal.email` |
 | `SMTP_PORT` | Ethereal SMTP port | `587` |
-| `SMTP_USER` | Ethereal username | `prince.senger76@ethereal.email` |
-| `SMTP_PASS` | Ethereal password | `mw3rRHE8vJe1kfdETA` |
+| `SMTP_USER` | Ethereal username | `your.email@ethereal.email` |
+| `SMTP_PASS` | Ethereal password | `your-password` |
 | `MAX_EMAILS_PER_HOUR` | Global hourly rate limit | `200` |
 | `DELAY_BETWEEN_EMAILS_MS` | Delay between sends (ms) | `2000` |
 | `WORKER_CONCURRENCY` | Parallel worker count | `5` |
@@ -336,7 +336,7 @@ GET /emails/sent
 | Variable | Description | Example |
 |----------|-------------|---------|
 | `NEXTAUTH_URL` | NextAuth callback URL | `http://localhost:3000` |
-| `NEXTAUTH_SECRET` | NextAuth secret key | `random-secret-string` |
+| `NEXTAUTH_SECRET` | NextAuth secret key | `your-secret-key` |
 | `GOOGLE_CLIENT_ID` | Google OAuth Client ID | `dummy-client-id` |
 | `GOOGLE_CLIENT_SECRET` | Google OAuth Secret | `dummy-client-secret` |
 | `NEXT_PUBLIC_API_URL` | Backend API URL | `http://localhost:4000/api` |
@@ -434,8 +434,7 @@ Content-Type: application/json
 
 Visit Ethereal Email inbox:
 - URL: https://ethereal.email/messages
-- Username: prince.senger76@ethereal.email
-- Password: mw3rRHE8vJe1kfdETA
+- Use your Ethereal credentials (from .env file)
 
 ---
 
@@ -516,8 +515,8 @@ enum EmailStatus {
 - **Frontend**: http://localhost:3000
 
 ### Credentials
-- **Database Password**: `admin123`
-- **Ethereal Email**: `prince.senger76@ethereal.email` / `mw3rRHE8vJe1kfdETA`
+- **Database**: Set up your own PostgreSQL with your credentials
+- **Ethereal Email**: Create free account at https://ethereal.email
 
 ### Known Limitations
 - Redis 5.0.14 (BullMQ recommends 6.2.0+) - Still functional
@@ -597,18 +596,18 @@ The frontend will start on **http://localhost:3000**
 ### **Backend Environment Variables** (`backend/.env`)
 ```env
 # Database Configuration
-DATABASE_URL="postgresql://postgres:admin123@localhost:5432/email_scheduler?schema=public"
+DATABASE_URL="postgresql://postgres:YOUR_PASSWORD@localhost:5432/email_scheduler?schema=public"
 
 # Redis Configuration
 REDIS_HOST=localhost
 REDIS_PORT=6379
 PORT=4000
 
-# SMTP Configuration (Ethereal Email)
+# SMTP Configuration (Ethereal Email - Get free account at https://ethereal.email)
 SMTP_HOST=smtp.ethereal.email
 SMTP_PORT=587
-SMTP_USER=prince.senger76@ethereal.email
-SMTP_PASS=mw3rRHE8vJe1kfdETA
+SMTP_USER=your.email@ethereal.email
+SMTP_PASS=your-ethereal-password
 
 # Rate Limiting Configuration
 MAX_EMAILS_PER_HOUR=200
@@ -620,7 +619,7 @@ WORKER_CONCURRENCY=5
 ```env
 # NextAuth Configuration
 NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=tfF0TP5aYEpq9Bu5x1fq+GugFiDgXDodmxsm20XRPbg=
+NEXTAUTH_SECRET=your-secret-key-here
 
 # Google OAuth (Dummy values for clickable icon)
 GOOGLE_CLIENT_ID=dummy-client-id
@@ -631,19 +630,18 @@ NEXT_PUBLIC_API_URL=http://localhost:4000/api
 ```
 
 ### **Database Credentials**
-- **Username**: `postgres`
-- **Password**: `admin123`
+- **Username**: `postgres` (or your username)
+- **Password**: Set your own password
 - **Database**: `email_scheduler`
 - **Port**: `5432`
 - **Host**: `localhost`
 
 ### **Ethereal Email SMTP**
-- **Name**: Prince Senger
-- **Username**: prince.senger76@ethereal.email
-- **Password**: mw3rRHE8vJe1kfdETA
+- Create free account at: https://ethereal.email
 - **Host**: smtp.ethereal.email
 - **Port**: 587
 - **Preview Sent Emails**: https://ethereal.email/messages
+- Use credentials from your Ethereal account
 
 ---
 
@@ -870,7 +868,9 @@ All emails are sent to Ethereal's fake SMTP server. You can view them at:
 
 Created for the ReachInbox Software Development Intern Assignment.
 
-**Contact**: kinsh@example.com (Update with your actual email)
+**Contact**: kinshuksaxena3@gmail.com
+**Number**:+91 9057538521
+**Linkedin**: https://www.linkedin.com/in/kinshuk-saxena-/
 
 ---
 

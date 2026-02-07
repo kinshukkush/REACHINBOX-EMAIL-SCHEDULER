@@ -18,14 +18,14 @@
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_SECURE=false
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-16-char-app-password
+SMTP_USER=YOUR_GMAIL_ADDRESS
+SMTP_PASS=YOUR_16_CHAR_APP_PASSWORD
 
 # Or use SendGrid (recommended for production)
 # SMTP_HOST=smtp.sendgrid.net
 # SMTP_PORT=587
 # SMTP_USER=apikey
-# SMTP_PASS=your-sendgrid-api-key
+# SMTP_PASS=YOUR_SENDGRID_API_KEY
 ```
 
 ### Step 3: Update mailService.ts
@@ -88,10 +88,11 @@ I'll set this up for you with:
 - Need to migrate data
 - Prisma setup changes
 
-**Your MongoDB URL format:**
+**MongoDB URL format:**
 ```
-mongodb+srv://username:password@cluster.mongodb.net/dbname
+mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<dbname>
 ```
+*Replace `<username>`, `<password>`, `<cluster>`, and `<dbname>` with your actual values*
 
 ---
 
@@ -135,11 +136,11 @@ For testing, create these users:
 
 **User 1:**
 - Email: demo@example.com
-- Password: Demo123!@#
+- Password: <create your own>
 
 **User 2:**
 - Email: test@example.com
-- Password: Test123!@#
+- Password: <create your own>
 
 ---
 

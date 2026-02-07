@@ -79,9 +79,7 @@ Use this checklist to ensure everything is set up correctly before running the a
 ## ✅ Verify Email Delivery
 
 - [ ] Open https://ethereal.email/messages
-- [ ] Login with:
-  - Username: `prince.senger76@ethereal.email`
-  - Password: `mw3rRHE8vJe1kfdETA`
+- [ ] Login with your Ethereal credentials (from .env file)
 - [ ] See sent emails in inbox
 - [ ] Open an email to verify content
 

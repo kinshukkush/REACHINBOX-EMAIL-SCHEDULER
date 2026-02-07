@@ -1,7 +1,7 @@
 {
-  "name": "backend",
+  "name": "email-scheduler-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Email scheduler backend with BullMQ and Redis",
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
