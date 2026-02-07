@@ -9,7 +9,23 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(cors());
+// CORS Configuration for production
+const allowedOrigins = [
+    'http://localhost:3000',
+    'https://reachinbox-email-scheduler-inky.vercel.app',
+    process.env.FRONTEND_URL || '',
+];
+
+app.use(cors({
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.some(allowed => allowed && origin.startsWith(allowed))) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true,
+}));
 app.use(express.json());
 
 // Routes
