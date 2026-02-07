@@ -28,6 +28,19 @@ app.use(cors({
 }));
 app.use(express.json());
 
+// Health check route
+app.get('/', (req, res) => {
+    res.json({ 
+        message: 'EMAIL-SCHEDULER Backend API', 
+        status: 'running',
+        endpoints: {
+            scheduled: '/api/emails/scheduled',
+            sent: '/api/emails/sent',
+            schedule: 'POST /api/emails/schedule'
+        }
+    });
+});
+
 // Routes
 app.use('/api/emails', emailRoutes);
 
